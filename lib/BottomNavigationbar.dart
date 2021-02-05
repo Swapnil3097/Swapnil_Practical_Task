@@ -19,18 +19,7 @@ class _MyStatefulWidgetState extends State<BottomNavigation> {
     super.initState();
   }
 
-  static Future<void> pop({bool animated}) async {
-    await SystemChannels.platform
-        .invokeMethod<void>('SystemNavigator.pop', animated);
-  }
-
-  Future<void> onSelectNotification(String payLoad) async {
-    if (payLoad != null) {
-      print(payLoad);
-    }
-  }
-
-  @override
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pageOptions[_selectedTab],
